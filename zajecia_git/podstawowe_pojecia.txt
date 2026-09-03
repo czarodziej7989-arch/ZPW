@@ -1,0 +1,8 @@
+repozytorium - folder na projekt wieloosobowy
+github - strona internetowa z repozytoriami
+git - pozwala na przesłanie zmian do repozytorium
+commit - zapisywanie zmian
+branch - to jest miejsce gdzie znajdują się pliki z projektu z jakimiś zmianami
+checkout - przełączanie się między gałęziami
+merge - przyłączenie zmian z dodatkowej gałęzi do głównej
+rebase - przenosi dane z gałęzi do innych gałęzi w inny sposób niż merge
