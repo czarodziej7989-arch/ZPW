@@ -1,0 +1,5 @@
+HEAD^ - do gory
+branch -f main  przenosi 3 commity wstecz
+reset - odwraca ostatniego commita chyba
+revert - tworzy dzieciaka
+cherry-pick - mozesz wybrac inne branche zeby robic revert z ich do checkout
