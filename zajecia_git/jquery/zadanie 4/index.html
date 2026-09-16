@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    #kwadrat{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        
+    }
+
+</style>
+<script>
+let liczba = 0;
+$(function(){
+    $("#kwadrat").click(function(){
+        liczba++;
+        $("p").text("kliknoles "+liczba+" razy")
+
+    });
+
+    $("#naKoniec").click(function(){
+        let value = $("input").val();
+        if(value.length > 0){
+        $("#lista").append("<li>"+$("#produkt").val()+"</li>")
+        $("li").last().css({
+            "color":"blue",
+            "font-weight":"bold"
+        });
+        $("input").val("");
+    }
+
+    });
+        $("#naPoczatek").click(function(){
+        let value = $("input").val();
+        if(value.length > 0){
+        $("#lista").prepend("<li>"+$("#produkt").val()+"</li>")
+        $("li").first().css({
+            "color":"green"})
+        }
+    });
+     $("input").val("");
+});
+
+</script>
+<body>
+    <div id="kwadrat">
+    </div>
+    <p>
+    </p>
+    <ul id="lista">
+  <li>Chleb</li>
+  <li>Mleko</li>
+</ul>
+<input type="text" id="produkt" placeholder="Nazwa produktu">
+<button id="naKoniec">Dodaj na koniec</button>
+<button id="naPoczatek">Dodaj na początek</button>
+</body>
+</html>
