@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+  body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        ul {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        li:hover {
+            color: #007bff;
+            font-weight: bold;
+        }
+        .link{
+    color: grey;
+    text-decoration: none;
+ 
+}
+ 
+.another_link{
+    background-color: black;
+}    
+ 
+.completely_different_link{
+    background-color: yellow;
+ 
+}
+.klasa1{
+    background-color: red;
+
+}
+.klasa2{
+     font-size: 150%;
+}
+</style>
+<script>
+let liczba = 0;
+$(function(){
+    
+$("#answer").change(function(){
+    if(this.checked){
+        $("#sent").removeAttr("disabled");
+    } else {
+        $("#sent").attr("disabled","disabled")
+    }
+})
+$("a").eq(1).addClass("another_link")
+$("a").eq(2).removeClass()
+$("#przycisk").click(function(){
+    $("#akapit").removeClass()
+    alert("Sukces")
+})
+});
+</script>
+<body>
+<input type="checkbox" id="answer">
+<label for ="answer">Czy akceptujrsz</label>
+<button id="sent" disabled>Wysjil</button>
+<p id="akapit" class="klasa1 klasa2">TAA</p>
+<button id="przycisk">przytcisk</button>
+    <ul>
+        <li id="pierwszy"><a href="#">The Witcher 3: Wild Hunt</a></li>
+        <li><a href="#" class="link">Cyberpunk 2077</a></li>
+        <li><a href="#" class="link">Elden Ring</a></li>
+        <li><a href="#" class="link">Baldur's Gate 3</a></li>
+        <li><a href="#">Starfield</a></li>
+        <li><a href="#">Hollow Knight</a></li>
+        <li id="minecraft"><a href="#">Minecraft</a></li>
+        <li><a href="#">Portal 2</a></li>
+        <li><a href="#">The Legend of Zelda: Breath of the Wild</a></li>
+        <li><a href="#">Dark Souls III</a></li>
+        <li><a href="#">Valorant</a></li>
+        <li><a href="#">Counter-Strike 2</a></li>
+    </ul>
+</body>
+</html>
