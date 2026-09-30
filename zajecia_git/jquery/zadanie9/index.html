@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+
+#kwadrat{
+    background-color: red;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+}
+#jablko{
+    background-color: green;
+    height: 20px;
+    width: 20px;
+    
+}
+</style>
+<script>
+let liczba = 0;
+$(function(){
+$(document).on("keydown keyup keypress", function(){
+    $("#eventType").text(event.type);
+});
+
+$(document).on("mousemove", function(){
+    $("#pageX").text(event.pageX);
+    $("#pageY").text(event.pageY);
+});
+$("#jablko").css({
+    "margin-left": Math.floor((Math.random() * 500)+1) + "px",
+    "margin-top": Math.floor((Math.random() * 500)+1) + "px"
+})
+let position = 0
+let position2 = 0
+$(document).on("keypress", function(){
+    if(event.key === "d"){
+        position = position + 10;
+        $("#kwadrat").css("margin-left",position+"px")}
+
+    else if(event.key === "a"){
+        position = position - 10;
+        $("#kwadrat").css("margin-left",position+"px")
+    }
+    else if(event.key === "w"){
+        position2 = position2 - 10;
+        $("#kwadrat").css("margin-top",position2+"px")
+    }
+    else if(event.key === "s"){
+        position2 = position2 + 10;
+        $("#kwadrat").css("margin-top",position2+"px")
+    }
+});
+});
+</script>
+<body>
+    <input type="text" id="pole">
+    <p>
+        Typ zdarzenia:
+        <span id="eventType">---</span>
+    </p>
+    <p>
+        Pozycja myszy
+        X = <span id="pageX">---</span>,
+        Y = <span id="pageY">---</span>
+    </p>
+<div id="kwadrat">
+</div>
+<div id="jablko">
+</div>
+</body>
+</html>
