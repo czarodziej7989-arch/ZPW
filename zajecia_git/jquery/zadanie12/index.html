@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    #zle{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+</style>
+<script>
+let liczba = 0;
+$(function(){
+    $("#formularz").submit(function(event){
+        event.preventDefault();
+        if($("#nickname").val == ""){
+            $("#info").text("Podaj nickname")
+        } else {
+            $("#info").text("Przeslano nick"+$("#nickname").val())
+        }
+    })
+    $("#formularz2").submit(function(event){
+        event.preventDefault();
+        if($("#password").length() <= 6){
+            $("#tekst").text("Haslo jest za krtokie")
+            $("#tekst").toggleClass("zle")
+        }
+    })
+});
+</script>
+<body>
+<form id="formularz">
+    <input type="text" id="nickname">
+    <button>Wyslij</button>
+</form>
+<p id="info">tak</p>
+<hr>
+<form id="formularz2">
+        <label>E-mail</label>
+    <input type="text" id="email">
+        <label>Haslo</label>
+    <input type="password" id="password">
+    <p id="tekst"></p>
+</form>
+</body>
+</html>
