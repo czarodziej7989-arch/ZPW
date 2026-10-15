@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    .wrongAnswer{
+        background-color: red;
+    }
+        .correctAnswer{
+        background-color: green;
+    }
+        /* #paragraf1{
+        height: 150px;
+        width: 150px;
+        background-color: forestgreen;
+        text-align: center;
+    }
+        #paragraf2{
+        height: 150px;
+        width: 150px;
+        background-color: seashell;
+        text-align: center;
+        } */
+
+</style>
+<script>
+let liczba = 0;
+$(function(){
+    // $("#button1").click(function(){
+    //     $("#paragraf1").hide();
+    // })
+    // $("#button2").click(function(){
+    //     $("#paragraf1").show();
+    // })
+    // $("#button3").click(function(){
+    //     $("#paragraf1").toggle();
+    // })
+    // $("#button4").click(function(){
+    //     $("#paragraf2").slideUp();
+    // })
+    // $("#button5").click(function(){
+    //     $("#paragraf2").slideDown();
+    // })
+    // $("#button6").click(function(){
+    //     $("#paragraf2").slideToggle();
+    // })
+    $("#button1").click(function(){
+        let $opcja = $('input[name="pytanie1"]:checked').val()
+        
+        if($opcja == "D"){
+            $("#labelD").addClass("correctAnswer")
+        } else if($opcja == "A"){
+            $("#labelA").addClass("wrongAnswer")
+            $("#button1").after("<div>jest zle bo meksyk jest stolica</div>")
+        } else if($opcja == "B"){
+            $("#labelB").addClass("wrongAnswer")
+            $("#button1").after("<div>jest zle bo meksyk jest stolica</div>")
+        } else if($opcja == "C"){
+            $("#labelC").addClass("wrongAnswer")
+            $("#button1").after("<div>jest zle bo meksyk jest stolica</div>")
+        } 
+        console.log($opcja)
+    })
+
+});
+</script>
+<body>
+
+<!-- <p id="paragraf1">SSSSSSS</p>
+<p id="paragraf2">SSSSSSS</p>
+<p>tak</p>
+<button id="button1">Hide</button>
+<button id="button2">Show</button>
+<button id="button3">Toggle</button>
+<button id="button4">SlideUp</button>
+<button id="button5">SlideDown</button>
+<button id="button6">SlideToggle</button> -->
+<form method="post" id="pytanie1">
+    <p>Jaka jest stolica Meksyku</p>
+        <label id="labelA">Sztokholm</label>
+    <input type ="radio" value="A" name="pytanie1"id="A">
+        <br><label id="labelB">Warszawa</label>
+    <input type ="radio" value="B" name="pytanie1"id="B">
+        <br><label id="labelC">Paryż</label>
+    <input type ="radio" value="C" name="pytanie1"id="C">
+        <br><label id="labelD">Meksyk</label>
+    <input type ="radio" value="D" name="pytanie1"id="D">
+    <button id="button1">Podaj odpowiedz</button>
+</form>
+
+
+</body>
+</html>
