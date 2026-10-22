@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+
+</style>
+<script>
+let liczba = 0;
+$(function(){
+    $("#sprawdz").click(function(){
+        let imie = $("#imie").val().trim()
+        if(imie === ""){
+            $("#blad").text("polejestwymagane")
+        } else {
+            $("#blad").text("twoje imie to: "+imie)
+        }
+    })
+    $("#sprawdzaWiek").click(function(){
+        let wiek = Number($("#wiek").val())
+        if(isNaN(wiek)){
+            $("#bladWiek").text("Wiek musi byc liczba")
+        } else {
+            $("#bladWiek").text("Masz "+wiek+ " lat")
+        }
+    })
+    $("#zapisz").click(function(){
+        let ocenka = Number($("#ocena").val())
+        if(ocenka >= 1 && ocenka <=6){
+            $("#info2").text("wszystko git twoja ocena: "+ocenka)
+        } else {
+            $("#info2").text("zle wpisales ocene")
+        }
+    })
+
+});
+</script>
+<body>
+    <input type="text" id="imie">
+    <button id="sprawdz">Sprawdz</button>
+    <p id="blad"></p>
+    <hr>
+    <input tupe="text" id="wiek">
+    <button id="sprawdzWiek">Sprawdz</button>
+    <p id="bladWiek"></p>
+    <hr>
+    <input type="text" id="ocena">
+    <button id="zapisz">asdasd</button>
+    <p id="info2"></p>
+
+</body>
+</html>
